@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7aa16ea2-058d-4d9a-9c52-31f6c139ad88" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar!/org/apache/logging/log4j/Logger.class" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2fFxPo0c8Uqd4XNtPBQyM64rq3r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Application.Start raft server.executor": "Run",
+    "Docker.Docker Image (1).executor": "Run",
+    "Docker.Docker Image (2).executor": "Run",
+    "Docker.Docker Image.executor": "Run",
+    "Docker.Dockerfile.executor": "Run",
+    "Docker.Dockerfile: Compose Deployment.executor": "Run",
+    "Docker.node-1.executor": "Run",
+    "Docker.node-2.executor": "Run",
+    "Docker.node-3.executor": "Run",
+    "Docker.target/Dockerfile.executor": "Run",
+    "Docker.test1.executor": "Run",
+    "Maven.raft-consensus [clean].executor": "Run",
+    "Maven.raft-consensus [compile].executor": "Run",
+    "Maven.raft-consensus [install].executor": "Run",
+    "Maven.raft-consensus [package].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Shell Script.Change ID .executor": "Run",
+    "Shell Script.Change ID to 1.executor": "Run",
+    "Shell Script.Change ID to 2.executor": "Run",
+    "Shell Script.Change ID to 3.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ratul.d/Personal/Projects/raft-consensus/src/main/java/proto",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.15046602",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/proto" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/target/classes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/proto" />
+      <recent name="$PROJECT_DIR$/src/main/resources/proto" />
+      <recent name="$PROJECT_DIR$/src/main/java/proto" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="proto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Compound.Start cluster">
+    <configuration name="Start raft server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.butterchicken.raft.ServerStarter" />
+      <module name="raft-consensus" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start cluster" type="CompoundRunConfigurationType">
+      <toRun name="node-1" type="docker-deploy" />
+      <toRun name="node-2" type="docker-deploy" />
+      <toRun name="node-3" type="docker-deploy" />
+      <method v="2" />
+    </configuration>
+    <configuration name="raft-consensus [package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Change ID to 1" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="file_path=&quot;$PROJECT_DIR$/src/main/resources/config/server_config.yaml&quot; sed -i '' 's/^id: .*/id: 1/' &quot;$file_path&quot;" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/change_server_config.sh" />
+      <option name="SCRIPT_OPTIONS" value="&quot;$PROJECT_DIR$/src/main/resources/config/server_config.yaml&quot; 1" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/sh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Change ID to 2" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="file_path=&quot;$PROJECT_DIR$/src/main/resources/config/server_config.yaml&quot; sed -i '' 's/^id: .*/id: 1/' &quot;$file_path&quot;" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/change_server_config.sh" />
+      <option name="SCRIPT_OPTIONS" value="&quot;$PROJECT_DIR$/src/main/resources/config/server_config.yaml&quot; 2" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/sh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Change ID to 3" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="file_path=&quot;$PROJECT_DIR$/src/main/resources/config/server_config.yaml&quot; sed -i '' 's/^id: .*/id: 1/' &quot;$file_path&quot;" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/change_server_config.sh" />
+      <option name="SCRIPT_OPTIONS" value="&quot;$PROJECT_DIR$/src/main/resources/config/server_config.yaml&quot; 3" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/sh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
+      <deployment type="docker-image">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="node-1" type="docker-deploy" factoryName="dockerfile" singleton="false" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="node" />
+          <option name="containerName" value="raft-node-1" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostIp" value="172.16.165.174" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="false" run_configuration_name="Change ID to 1" run_configuration_type="ShConfigurationType" />
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="raft-consensus [package]" run_configuration_type="MavenRunConfiguration" />
+      </method>
+    </configuration>
+    <configuration name="node-2" type="docker-deploy" factoryName="dockerfile" singleton="false" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="node" />
+          <option name="containerName" value="raft-node-2" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostIp" value="172.16.165.174" />
+                <option name="hostPort" value="8081" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="Change ID to 2" run_configuration_type="ShConfigurationType" />
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="raft-consensus [package]" run_configuration_type="MavenRunConfiguration" />
+      </method>
+    </configuration>
+    <configuration name="node-3" type="docker-deploy" factoryName="dockerfile" singleton="false" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="node" />
+          <option name="containerName" value="raft-node-3" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostIp" value="172.16.165.174" />
+                <option name="hostPort" value="8082" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="false" run_configuration_name="Change ID to 3" run_configuration_type="ShConfigurationType" />
+        <option name="RunConfigurationTask" enabled="false" run_configuration_name="raft-consensus [package]" run_configuration_type="MavenRunConfiguration" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Start raft server" />
+      <item itemvalue="Compound.Start cluster" />
+      <item itemvalue="Docker.node-1" />
+      <item itemvalue="Docker.node-3" />
+      <item itemvalue="Docker.node-2" />
+      <item itemvalue="Maven.raft-consensus [package]" />
+      <item itemvalue="Shell Script.Change ID to 1" />
+      <item itemvalue="Shell Script.Change ID to 2" />
+      <item itemvalue="Shell Script.Change ID to 3" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7aa16ea2-058d-4d9a-9c52-31f6c139ad88" name="Changes" comment="" />
+      <created>1713410605342</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713410605342</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/RPCAdapter.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

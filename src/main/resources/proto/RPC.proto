@@ -1,0 +1,29 @@
+syntax = "proto3"; /* default is proto2 */
+option java_package = "proto";
+
+service RequestVoteService {
+  rpc requestVoteRPCHandler (VoteRPCRequest) returns (VoteRPCResponse) {}
+}
+message VoteRPCRequest {
+  /*type   name = id; */
+  int32 term = 1;
+  int32 candidateId = 2;
+}
+message VoteRPCResponse {
+  int32 term = 1;
+  bool voteGranted = 2;
+}
+
+
+service HeatbeatService {
+  rpc sendHeartbeatRPC (HeartbeatRPCRequest) returns (VoidRPCResponse){}
+}
+
+message HeartbeatRPCRequest{
+  int32 senderId = 1;
+  int32 term = 2;
+}
+
+message  VoidRPCResponse{
+
+}
