@@ -1,10 +1,10 @@
 package org.butterchicken.raft.consensus;
 
-import io.grpc.ManagedChannel;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 import org.butterchicken.raft.Utils.Config;
 import org.butterchicken.raft.Utils.RaftServerConfig;
 import org.butterchicken.raft.cluster.ClusterNode;
@@ -14,6 +14,7 @@ import org.butterchicken.raft.consensus.request.HeartbeatRequest;
 import org.butterchicken.raft.statemachine.StateMachine;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -22,20 +23,20 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 import service.HeartbeatImpl;
+import service.LogReplicationImpl;
 import service.RequestVoteImpl;
+import org.butterchicken.raft.consensus.LogManager;
 
 @Getter
 @Setter
+@Log4j2
 public class RaftServer {
 
-    private static final Logger logger = LogManager.getLogger(RaftServer.class);
 
     Integer id;
     String address;
-
     Integer heartbeatMs;
     StateMachine stateMachine;
     ServerState serverState;
@@ -52,7 +53,7 @@ public class RaftServer {
     private RaftServer() throws  RuntimeException{
         try {
             this.cluster = Config.loadClusterConfig();
-            this.heartbeatMs = 3000;
+            this.heartbeatMs = 8000;
             // load configs from file
             RaftServerConfig raftServerConfig = Config.loadServerConfig();
             this.port = raftServerConfig.getPort();
@@ -71,9 +72,9 @@ public class RaftServer {
             this.serverState = ServerState.FOLLOWER;
         }
         // loading persistant state from disk or initialising it
-        this.raftPersistantState = new RaftPersistantState();
+        this.raftPersistantState = RaftPersistantState.getInstance();
 
-        Server server = ServerBuilder.forPort(this.port).addService(new RequestVoteImpl()).addService(new HeartbeatImpl()).build();
+        Server server = ServerBuilder.forPort(this.port).addService(new RequestVoteImpl()).addService(new HeartbeatImpl()).addService(new LogReplicationImpl()).build();
         server.start();
 
         electionManager = ElectionManager.getInstance();
@@ -82,23 +83,19 @@ public class RaftServer {
 
 
     public void changeStateToCandidate(){
-        lock.lock();
         this.serverState = ServerState.CANDIDATE;
         heartbeatsThread.shutdownNow();
-        lock.unlock();
     }
-    public void changeStateToLeader(){
-        lock.lock();
+    public void changeStateToLeader() {
         this.serverState = ServerState.LEADER;
+        LogManager.getInstance().resetLogStates();
+        log.trace("New leader has been elected, node " + this.getId());
+        //this.raftPersistantState.appendToLog(new LogEntry(RaftServer.getInstance().getCurrentTerm(), new byte[1])); TODO a sync message for states
         startHeartBeatThread();
-        lock.unlock();
     }
     public void changeStateToFollower(){
-        lock.lock();
         this.serverState = ServerState.FOLLOWER;
         heartbeatsThread.shutdownNow();
-        lock.unlock();
-
     }
 
     private void startHeartBeatThread(){
@@ -107,17 +104,13 @@ public class RaftServer {
             cluster.stream()
                     .filter(clusterNode -> !clusterNode.getId().equals(getId()))
                     .forEach(clusterNode -> {
-                        ManagedChannel channel = null;
-                        try {
-                            logger.debug("Sending heartbeat to " + clusterNode.getHost() + ":" +clusterNode.getPort());
+                            log.trace("Sending heartbeat to " + clusterNode.getHost() + ":" +clusterNode.getPort());
                             RPCAdapter.sendHeartbeat(clusterNode,new HeartbeatRequest(this.getId(), this.getCurrentTerm()));
-                        } catch (Exception e) {
-                            logger.error(e.getMessage());
-                        } finally {
-                            if(channel != null) {
-                                channel.shutdown();
-                            }
+                        try {
 
+                            apply("SET x = 1");
+                        } catch (RuntimeException e) {
+                            log.error("Test replication command failure :" + e.getMessage());
                         }
                     });
         };
@@ -127,11 +120,17 @@ public class RaftServer {
 
 
     public void handleIncomingHeartbeat(HeartbeatRequest heartbeatRequest){
-        logger.trace("Received heartbeat from node " + heartbeatRequest.getSenderId() + " on node " + this.getId());
+        log.trace("Received heartbeat from node " + heartbeatRequest.getSenderId() + " on node " + this.getId());
         updateTerm(heartbeatRequest.getTerm());
         ElectionManager.getInstance().resetElectionTimeout();
     }
 
+    // called by user of the cluster
+    public void apply(String command) throws RuntimeException{
+        assert (this.serverState.equals(ServerState.LEADER));
+        LogManager.getInstance().append(new LogEntry(this.getCurrentTerm(),command.getBytes(StandardCharsets.UTF_8)));
+
+    }
 
     public static RaftServer getInstance(){
         if(instance == null){
@@ -156,11 +155,15 @@ public class RaftServer {
     public Boolean updateTerm(Integer term){
         Boolean termUpdated = Boolean.FALSE;
         if(term > raftPersistantState.getCurrentTerm()){
-            raftPersistantState.setCurrentTerm(term);
+            try {
+                raftPersistantState.setCurrentTerm(term);
+                setVotedFor(null);
+            }catch (IOException e){
+                return Boolean.FALSE;
+            }
             this.changeStateToFollower();
-            setVotedFor(null);
             termUpdated = Boolean.TRUE;
-            logger.trace("Node " + this.getId()+ " transitioned to follower");
+            log.trace("Node " + this.getId()+ " transitioned to follower");
         }
         return termUpdated;
     }
@@ -168,12 +171,15 @@ public class RaftServer {
         return raftPersistantState.getVotedFor();
     }
 
-    public void setVotedFor(Integer votedFor){
+    public void setVotedFor(Integer votedFor) throws IOException{
         raftPersistantState.setVotedFor(votedFor);
     }
-    public void incrementTerm(){
+    public void incrementTerm() throws IOException{
         this.raftPersistantState.setCurrentTerm(this.getCurrentTerm() + 1);
     }
+
+
+
 
 
 }

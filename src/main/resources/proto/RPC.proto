@@ -27,3 +27,26 @@ message HeartbeatRPCRequest{
 message  VoidRPCResponse{
 
 }
+
+
+service LogReplicationService{
+  rpc appendEntriesRPCHandler (AppendEntriesRPCRequest) returns (AppendEntriesRPCResponse){}
+}
+
+message AppendEntriesRPCRequest {
+  int32 leaderID = 1;
+  int32 prevLogIndex = 2;
+  int32 prevLogTerm = 3;
+  repeated LogEntry logEntries = 4;
+  int32 leaderCommitIndex = 5;
+  int32  term = 6;
+}
+
+message AppendEntriesRPCResponse{
+  bool isReplicated = 1;
+}
+
+message LogEntry{
+  bytes command = 1;
+  int32 term = 2;
+}

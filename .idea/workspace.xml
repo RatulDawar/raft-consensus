@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7aa16ea2-058d-4d9a-9c52-31f6c139ad88" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/change_server_config.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/LogEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/LogManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/request/AppendEntriesRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/request/AppendEntriesResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/proto/LogReplicationServiceGrpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/LogReplicationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/ElectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/ElectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/RPCAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/RPCAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/RaftServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/RaftServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/persist/RaftPersistantState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/persist/RaftPersistantState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/persistantstore/Persistent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/butterchicken/raft/persistantstore/Persistent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/proto/RPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/proto/RPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/server_config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/server_config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proto/RPC.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/proto/RPC.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,40 +62,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
-    "Application.Start raft server.executor": "Run",
-    "Docker.Docker Image (1).executor": "Run",
-    "Docker.Docker Image (2).executor": "Run",
-    "Docker.Docker Image.executor": "Run",
-    "Docker.Dockerfile.executor": "Run",
-    "Docker.Dockerfile: Compose Deployment.executor": "Run",
-    "Docker.node-1.executor": "Run",
-    "Docker.node-2.executor": "Run",
-    "Docker.node-3.executor": "Run",
-    "Docker.target/Dockerfile.executor": "Run",
-    "Docker.test1.executor": "Run",
-    "Maven.raft-consensus [clean].executor": "Run",
-    "Maven.raft-consensus [compile].executor": "Run",
-    "Maven.raft-consensus [install].executor": "Run",
-    "Maven.raft-consensus [package].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Shell Script.Change ID .executor": "Run",
-    "Shell Script.Change ID to 1.executor": "Run",
-    "Shell Script.Change ID to 2.executor": "Run",
-    "Shell Script.Change ID to 3.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ratul.d/Personal/Projects/raft-consensus/src/main/java/proto",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.15046602",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Start raft server.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Docker Image (1).executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Docker Image (2).executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Docker Image.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Dockerfile: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.node-1.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.node-2.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.node-3.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.target/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.test1.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.raft-consensus [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.raft-consensus [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.raft-consensus [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.raft-consensus [package].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Shell Script.Change ID .executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.Change ID to 1.executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.Change ID to 2.executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.Change ID to 3.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;log__replication__dev&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ratul.d/Personal/Projects/raft-consensus/src/main/java/proto&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.15046602&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/proto" />
@@ -309,9 +327,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/RPCAdapter.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/butterchicken/raft/consensus/persist/RaftPersistantState.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

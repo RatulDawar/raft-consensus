@@ -6,6 +6,7 @@ import org.butterchicken.raft.consensus.request.VoteRequest;
 import org.butterchicken.raft.consensus.response.VoteResponse;
 
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -31,7 +32,6 @@ public class ElectionManager {
 
 
     public VoteResponse requestVoteHandle(VoteRequest voteRequest){
-        lock.lock();
         server.updateTerm(voteRequest.getTerm());
         log.trace("Received vote request from node  " + voteRequest.getCandidateId() + " on node " + server.getId());
         if(voteRequest.getTerm() < server.getCurrentTerm()){
@@ -40,8 +40,17 @@ public class ElectionManager {
         }
 
         log.trace("Vote granted to server " + voteRequest.getCandidateId());
-        server.setVotedFor(voteRequest.getCandidateId());
-        return new VoteResponse(server.getCurrentTerm(),Boolean.TRUE);
+        boolean isVoteSuccessful = false;
+        try {
+            server.setVotedFor(voteRequest.getCandidateId());
+            isVoteSuccessful = true;
+        }catch (IOException e){
+            log.error("Voting error unable to set voted for " + e.getMessage());
+        }
+
+        return new VoteResponse(server.getCurrentTerm(),isVoteSuccessful);
+
+
     }
 
 
@@ -61,16 +70,25 @@ public class ElectionManager {
                     log.error("Failed to send vote request to " + clusterNode.getHost() + ":" + clusterNode.getPort());
                 }
             }else{
-                server.setVotedFor(server.getId());
+                try {
+                    server.setVotedFor(server.getId());
+                }catch (IOException e){
+                    log.error("IOException in voting for self");
+                }
                 votesReceived++;
             }
         }
 
+        Boolean isElected = Boolean.FALSE;
         if(votesReceived >= CONSENSUS_THRESHOLD){
-            log.trace("New leader has been elected " + server.getId());
-            server.incrementTerm();
+            try {
+                server.incrementTerm();
+                isElected = Boolean.TRUE;
+            }catch (IOException e){
+                log.error("Failed to change term, election failed ");
+            }
             server.changeStateToLeader();
-            return Boolean.TRUE;
+            return isElected;
         }else{
             log.debug("Consensus not formed");
             return Boolean.FALSE;

@@ -39,4 +39,4 @@ build/
 
 ## Test Scripts ##
 ./dependency-reduced-pom.xml
-./change_server_config.sh
+change_server_config.sh

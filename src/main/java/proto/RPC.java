@@ -2064,6 +2064,2125 @@ public final class RPC {
 
   }
 
+  public interface AppendEntriesRPCRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:AppendEntriesRPCRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 leaderID = 1;</code>
+     */
+    int getLeaderID();
+
+    /**
+     * <code>int32 prevLogIndex = 2;</code>
+     */
+    int getPrevLogIndex();
+
+    /**
+     * <code>int32 prevLogTerm = 3;</code>
+     */
+    int getPrevLogTerm();
+
+    /**
+     * <code>repeated .LogEntry logEntries = 4;</code>
+     */
+    java.util.List<proto.RPC.LogEntry> 
+        getLogEntriesList();
+    /**
+     * <code>repeated .LogEntry logEntries = 4;</code>
+     */
+    proto.RPC.LogEntry getLogEntries(int index);
+    /**
+     * <code>repeated .LogEntry logEntries = 4;</code>
+     */
+    int getLogEntriesCount();
+    /**
+     * <code>repeated .LogEntry logEntries = 4;</code>
+     */
+    java.util.List<? extends proto.RPC.LogEntryOrBuilder> 
+        getLogEntriesOrBuilderList();
+    /**
+     * <code>repeated .LogEntry logEntries = 4;</code>
+     */
+    proto.RPC.LogEntryOrBuilder getLogEntriesOrBuilder(
+        int index);
+
+    /**
+     * <code>int32 leaderCommitIndex = 5;</code>
+     */
+    int getLeaderCommitIndex();
+
+    /**
+     * <code>int32 term = 6;</code>
+     */
+    int getTerm();
+  }
+  /**
+   * Protobuf type {@code AppendEntriesRPCRequest}
+   */
+  public  static final class AppendEntriesRPCRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:AppendEntriesRPCRequest)
+      AppendEntriesRPCRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AppendEntriesRPCRequest.newBuilder() to construct.
+    private AppendEntriesRPCRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AppendEntriesRPCRequest() {
+      leaderID_ = 0;
+      prevLogIndex_ = 0;
+      prevLogTerm_ = 0;
+      logEntries_ = java.util.Collections.emptyList();
+      leaderCommitIndex_ = 0;
+      term_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AppendEntriesRPCRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              leaderID_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              prevLogIndex_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              prevLogTerm_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                logEntries_ = new java.util.ArrayList<proto.RPC.LogEntry>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              logEntries_.add(
+                  input.readMessage(proto.RPC.LogEntry.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+
+              leaderCommitIndex_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              term_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          logEntries_ = java.util.Collections.unmodifiableList(logEntries_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return proto.RPC.internal_static_AppendEntriesRPCRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return proto.RPC.internal_static_AppendEntriesRPCRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              proto.RPC.AppendEntriesRPCRequest.class, proto.RPC.AppendEntriesRPCRequest.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int LEADERID_FIELD_NUMBER = 1;
+    private int leaderID_;
+    /**
+     * <code>int32 leaderID = 1;</code>
+     */
+    public int getLeaderID() {
+      return leaderID_;
+    }
+
+    public static final int PREVLOGINDEX_FIELD_NUMBER = 2;
+    private int prevLogIndex_;
+    /**
+     * <code>int32 prevLogIndex = 2;</code>
+     */
+    public int getPrevLogIndex() {
+      return prevLogIndex_;
+    }
+
+    public static final int PREVLOGTERM_FIELD_NUMBER = 3;
+    private int prevLogTerm_;
+    /**
+     * <code>int32 prevLogTerm = 3;</code>
+     */
+    public int getPrevLogTerm() {
+      return prevLogTerm_;
+    }
+
+    public static final int LOGENTRIES_FIELD_NUMBER = 4;
+    private java.util.List<proto.RPC.LogEntry> logEntries_;
+    /**
+     * <code>repeated .LogEntry logEntries = 4;</code>
+     */
+    public java.util.List<proto.RPC.LogEntry> getLogEntriesList() {
+      return logEntries_;
+    }
+    /**
+     * <code>repeated .LogEntry logEntries = 4;</code>
+     */
+    public java.util.List<? extends proto.RPC.LogEntryOrBuilder> 
+        getLogEntriesOrBuilderList() {
+      return logEntries_;
+    }
+    /**
+     * <code>repeated .LogEntry logEntries = 4;</code>
+     */
+    public int getLogEntriesCount() {
+      return logEntries_.size();
+    }
+    /**
+     * <code>repeated .LogEntry logEntries = 4;</code>
+     */
+    public proto.RPC.LogEntry getLogEntries(int index) {
+      return logEntries_.get(index);
+    }
+    /**
+     * <code>repeated .LogEntry logEntries = 4;</code>
+     */
+    public proto.RPC.LogEntryOrBuilder getLogEntriesOrBuilder(
+        int index) {
+      return logEntries_.get(index);
+    }
+
+    public static final int LEADERCOMMITINDEX_FIELD_NUMBER = 5;
+    private int leaderCommitIndex_;
+    /**
+     * <code>int32 leaderCommitIndex = 5;</code>
+     */
+    public int getLeaderCommitIndex() {
+      return leaderCommitIndex_;
+    }
+
+    public static final int TERM_FIELD_NUMBER = 6;
+    private int term_;
+    /**
+     * <code>int32 term = 6;</code>
+     */
+    public int getTerm() {
+      return term_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (leaderID_ != 0) {
+        output.writeInt32(1, leaderID_);
+      }
+      if (prevLogIndex_ != 0) {
+        output.writeInt32(2, prevLogIndex_);
+      }
+      if (prevLogTerm_ != 0) {
+        output.writeInt32(3, prevLogTerm_);
+      }
+      for (int i = 0; i < logEntries_.size(); i++) {
+        output.writeMessage(4, logEntries_.get(i));
+      }
+      if (leaderCommitIndex_ != 0) {
+        output.writeInt32(5, leaderCommitIndex_);
+      }
+      if (term_ != 0) {
+        output.writeInt32(6, term_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (leaderID_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, leaderID_);
+      }
+      if (prevLogIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, prevLogIndex_);
+      }
+      if (prevLogTerm_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, prevLogTerm_);
+      }
+      for (int i = 0; i < logEntries_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, logEntries_.get(i));
+      }
+      if (leaderCommitIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, leaderCommitIndex_);
+      }
+      if (term_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, term_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof proto.RPC.AppendEntriesRPCRequest)) {
+        return super.equals(obj);
+      }
+      proto.RPC.AppendEntriesRPCRequest other = (proto.RPC.AppendEntriesRPCRequest) obj;
+
+      boolean result = true;
+      result = result && (getLeaderID()
+          == other.getLeaderID());
+      result = result && (getPrevLogIndex()
+          == other.getPrevLogIndex());
+      result = result && (getPrevLogTerm()
+          == other.getPrevLogTerm());
+      result = result && getLogEntriesList()
+          .equals(other.getLogEntriesList());
+      result = result && (getLeaderCommitIndex()
+          == other.getLeaderCommitIndex());
+      result = result && (getTerm()
+          == other.getTerm());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LEADERID_FIELD_NUMBER;
+      hash = (53 * hash) + getLeaderID();
+      hash = (37 * hash) + PREVLOGINDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getPrevLogIndex();
+      hash = (37 * hash) + PREVLOGTERM_FIELD_NUMBER;
+      hash = (53 * hash) + getPrevLogTerm();
+      if (getLogEntriesCount() > 0) {
+        hash = (37 * hash) + LOGENTRIES_FIELD_NUMBER;
+        hash = (53 * hash) + getLogEntriesList().hashCode();
+      }
+      hash = (37 * hash) + LEADERCOMMITINDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getLeaderCommitIndex();
+      hash = (37 * hash) + TERM_FIELD_NUMBER;
+      hash = (53 * hash) + getTerm();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static proto.RPC.AppendEntriesRPCRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static proto.RPC.AppendEntriesRPCRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(proto.RPC.AppendEntriesRPCRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code AppendEntriesRPCRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:AppendEntriesRPCRequest)
+        proto.RPC.AppendEntriesRPCRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return proto.RPC.internal_static_AppendEntriesRPCRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return proto.RPC.internal_static_AppendEntriesRPCRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                proto.RPC.AppendEntriesRPCRequest.class, proto.RPC.AppendEntriesRPCRequest.Builder.class);
+      }
+
+      // Construct using proto.RPC.AppendEntriesRPCRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getLogEntriesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        leaderID_ = 0;
+
+        prevLogIndex_ = 0;
+
+        prevLogTerm_ = 0;
+
+        if (logEntriesBuilder_ == null) {
+          logEntries_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          logEntriesBuilder_.clear();
+        }
+        leaderCommitIndex_ = 0;
+
+        term_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return proto.RPC.internal_static_AppendEntriesRPCRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public proto.RPC.AppendEntriesRPCRequest getDefaultInstanceForType() {
+        return proto.RPC.AppendEntriesRPCRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public proto.RPC.AppendEntriesRPCRequest build() {
+        proto.RPC.AppendEntriesRPCRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public proto.RPC.AppendEntriesRPCRequest buildPartial() {
+        proto.RPC.AppendEntriesRPCRequest result = new proto.RPC.AppendEntriesRPCRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.leaderID_ = leaderID_;
+        result.prevLogIndex_ = prevLogIndex_;
+        result.prevLogTerm_ = prevLogTerm_;
+        if (logEntriesBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            logEntries_ = java.util.Collections.unmodifiableList(logEntries_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.logEntries_ = logEntries_;
+        } else {
+          result.logEntries_ = logEntriesBuilder_.build();
+        }
+        result.leaderCommitIndex_ = leaderCommitIndex_;
+        result.term_ = term_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof proto.RPC.AppendEntriesRPCRequest) {
+          return mergeFrom((proto.RPC.AppendEntriesRPCRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(proto.RPC.AppendEntriesRPCRequest other) {
+        if (other == proto.RPC.AppendEntriesRPCRequest.getDefaultInstance()) return this;
+        if (other.getLeaderID() != 0) {
+          setLeaderID(other.getLeaderID());
+        }
+        if (other.getPrevLogIndex() != 0) {
+          setPrevLogIndex(other.getPrevLogIndex());
+        }
+        if (other.getPrevLogTerm() != 0) {
+          setPrevLogTerm(other.getPrevLogTerm());
+        }
+        if (logEntriesBuilder_ == null) {
+          if (!other.logEntries_.isEmpty()) {
+            if (logEntries_.isEmpty()) {
+              logEntries_ = other.logEntries_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureLogEntriesIsMutable();
+              logEntries_.addAll(other.logEntries_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.logEntries_.isEmpty()) {
+            if (logEntriesBuilder_.isEmpty()) {
+              logEntriesBuilder_.dispose();
+              logEntriesBuilder_ = null;
+              logEntries_ = other.logEntries_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              logEntriesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLogEntriesFieldBuilder() : null;
+            } else {
+              logEntriesBuilder_.addAllMessages(other.logEntries_);
+            }
+          }
+        }
+        if (other.getLeaderCommitIndex() != 0) {
+          setLeaderCommitIndex(other.getLeaderCommitIndex());
+        }
+        if (other.getTerm() != 0) {
+          setTerm(other.getTerm());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        proto.RPC.AppendEntriesRPCRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.RPC.AppendEntriesRPCRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int leaderID_ ;
+      /**
+       * <code>int32 leaderID = 1;</code>
+       */
+      public int getLeaderID() {
+        return leaderID_;
+      }
+      /**
+       * <code>int32 leaderID = 1;</code>
+       */
+      public Builder setLeaderID(int value) {
+        
+        leaderID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 leaderID = 1;</code>
+       */
+      public Builder clearLeaderID() {
+        
+        leaderID_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int prevLogIndex_ ;
+      /**
+       * <code>int32 prevLogIndex = 2;</code>
+       */
+      public int getPrevLogIndex() {
+        return prevLogIndex_;
+      }
+      /**
+       * <code>int32 prevLogIndex = 2;</code>
+       */
+      public Builder setPrevLogIndex(int value) {
+        
+        prevLogIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 prevLogIndex = 2;</code>
+       */
+      public Builder clearPrevLogIndex() {
+        
+        prevLogIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int prevLogTerm_ ;
+      /**
+       * <code>int32 prevLogTerm = 3;</code>
+       */
+      public int getPrevLogTerm() {
+        return prevLogTerm_;
+      }
+      /**
+       * <code>int32 prevLogTerm = 3;</code>
+       */
+      public Builder setPrevLogTerm(int value) {
+        
+        prevLogTerm_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 prevLogTerm = 3;</code>
+       */
+      public Builder clearPrevLogTerm() {
+        
+        prevLogTerm_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<proto.RPC.LogEntry> logEntries_ =
+        java.util.Collections.emptyList();
+      private void ensureLogEntriesIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          logEntries_ = new java.util.ArrayList<proto.RPC.LogEntry>(logEntries_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          proto.RPC.LogEntry, proto.RPC.LogEntry.Builder, proto.RPC.LogEntryOrBuilder> logEntriesBuilder_;
+
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public java.util.List<proto.RPC.LogEntry> getLogEntriesList() {
+        if (logEntriesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(logEntries_);
+        } else {
+          return logEntriesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public int getLogEntriesCount() {
+        if (logEntriesBuilder_ == null) {
+          return logEntries_.size();
+        } else {
+          return logEntriesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public proto.RPC.LogEntry getLogEntries(int index) {
+        if (logEntriesBuilder_ == null) {
+          return logEntries_.get(index);
+        } else {
+          return logEntriesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public Builder setLogEntries(
+          int index, proto.RPC.LogEntry value) {
+        if (logEntriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLogEntriesIsMutable();
+          logEntries_.set(index, value);
+          onChanged();
+        } else {
+          logEntriesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public Builder setLogEntries(
+          int index, proto.RPC.LogEntry.Builder builderForValue) {
+        if (logEntriesBuilder_ == null) {
+          ensureLogEntriesIsMutable();
+          logEntries_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          logEntriesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public Builder addLogEntries(proto.RPC.LogEntry value) {
+        if (logEntriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLogEntriesIsMutable();
+          logEntries_.add(value);
+          onChanged();
+        } else {
+          logEntriesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public Builder addLogEntries(
+          int index, proto.RPC.LogEntry value) {
+        if (logEntriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLogEntriesIsMutable();
+          logEntries_.add(index, value);
+          onChanged();
+        } else {
+          logEntriesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public Builder addLogEntries(
+          proto.RPC.LogEntry.Builder builderForValue) {
+        if (logEntriesBuilder_ == null) {
+          ensureLogEntriesIsMutable();
+          logEntries_.add(builderForValue.build());
+          onChanged();
+        } else {
+          logEntriesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public Builder addLogEntries(
+          int index, proto.RPC.LogEntry.Builder builderForValue) {
+        if (logEntriesBuilder_ == null) {
+          ensureLogEntriesIsMutable();
+          logEntries_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          logEntriesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public Builder addAllLogEntries(
+          java.lang.Iterable<? extends proto.RPC.LogEntry> values) {
+        if (logEntriesBuilder_ == null) {
+          ensureLogEntriesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, logEntries_);
+          onChanged();
+        } else {
+          logEntriesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public Builder clearLogEntries() {
+        if (logEntriesBuilder_ == null) {
+          logEntries_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          logEntriesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public Builder removeLogEntries(int index) {
+        if (logEntriesBuilder_ == null) {
+          ensureLogEntriesIsMutable();
+          logEntries_.remove(index);
+          onChanged();
+        } else {
+          logEntriesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public proto.RPC.LogEntry.Builder getLogEntriesBuilder(
+          int index) {
+        return getLogEntriesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public proto.RPC.LogEntryOrBuilder getLogEntriesOrBuilder(
+          int index) {
+        if (logEntriesBuilder_ == null) {
+          return logEntries_.get(index);  } else {
+          return logEntriesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public java.util.List<? extends proto.RPC.LogEntryOrBuilder> 
+           getLogEntriesOrBuilderList() {
+        if (logEntriesBuilder_ != null) {
+          return logEntriesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(logEntries_);
+        }
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public proto.RPC.LogEntry.Builder addLogEntriesBuilder() {
+        return getLogEntriesFieldBuilder().addBuilder(
+            proto.RPC.LogEntry.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public proto.RPC.LogEntry.Builder addLogEntriesBuilder(
+          int index) {
+        return getLogEntriesFieldBuilder().addBuilder(
+            index, proto.RPC.LogEntry.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .LogEntry logEntries = 4;</code>
+       */
+      public java.util.List<proto.RPC.LogEntry.Builder> 
+           getLogEntriesBuilderList() {
+        return getLogEntriesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          proto.RPC.LogEntry, proto.RPC.LogEntry.Builder, proto.RPC.LogEntryOrBuilder> 
+          getLogEntriesFieldBuilder() {
+        if (logEntriesBuilder_ == null) {
+          logEntriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              proto.RPC.LogEntry, proto.RPC.LogEntry.Builder, proto.RPC.LogEntryOrBuilder>(
+                  logEntries_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          logEntries_ = null;
+        }
+        return logEntriesBuilder_;
+      }
+
+      private int leaderCommitIndex_ ;
+      /**
+       * <code>int32 leaderCommitIndex = 5;</code>
+       */
+      public int getLeaderCommitIndex() {
+        return leaderCommitIndex_;
+      }
+      /**
+       * <code>int32 leaderCommitIndex = 5;</code>
+       */
+      public Builder setLeaderCommitIndex(int value) {
+        
+        leaderCommitIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 leaderCommitIndex = 5;</code>
+       */
+      public Builder clearLeaderCommitIndex() {
+        
+        leaderCommitIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int term_ ;
+      /**
+       * <code>int32 term = 6;</code>
+       */
+      public int getTerm() {
+        return term_;
+      }
+      /**
+       * <code>int32 term = 6;</code>
+       */
+      public Builder setTerm(int value) {
+        
+        term_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 term = 6;</code>
+       */
+      public Builder clearTerm() {
+        
+        term_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:AppendEntriesRPCRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:AppendEntriesRPCRequest)
+    private static final proto.RPC.AppendEntriesRPCRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new proto.RPC.AppendEntriesRPCRequest();
+    }
+
+    public static proto.RPC.AppendEntriesRPCRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AppendEntriesRPCRequest>
+        PARSER = new com.google.protobuf.AbstractParser<AppendEntriesRPCRequest>() {
+      @java.lang.Override
+      public AppendEntriesRPCRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AppendEntriesRPCRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AppendEntriesRPCRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AppendEntriesRPCRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public proto.RPC.AppendEntriesRPCRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AppendEntriesRPCResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:AppendEntriesRPCResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool isReplicated = 1;</code>
+     */
+    boolean getIsReplicated();
+  }
+  /**
+   * Protobuf type {@code AppendEntriesRPCResponse}
+   */
+  public  static final class AppendEntriesRPCResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:AppendEntriesRPCResponse)
+      AppendEntriesRPCResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AppendEntriesRPCResponse.newBuilder() to construct.
+    private AppendEntriesRPCResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AppendEntriesRPCResponse() {
+      isReplicated_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AppendEntriesRPCResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              isReplicated_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return proto.RPC.internal_static_AppendEntriesRPCResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return proto.RPC.internal_static_AppendEntriesRPCResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              proto.RPC.AppendEntriesRPCResponse.class, proto.RPC.AppendEntriesRPCResponse.Builder.class);
+    }
+
+    public static final int ISREPLICATED_FIELD_NUMBER = 1;
+    private boolean isReplicated_;
+    /**
+     * <code>bool isReplicated = 1;</code>
+     */
+    public boolean getIsReplicated() {
+      return isReplicated_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (isReplicated_ != false) {
+        output.writeBool(1, isReplicated_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (isReplicated_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, isReplicated_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof proto.RPC.AppendEntriesRPCResponse)) {
+        return super.equals(obj);
+      }
+      proto.RPC.AppendEntriesRPCResponse other = (proto.RPC.AppendEntriesRPCResponse) obj;
+
+      boolean result = true;
+      result = result && (getIsReplicated()
+          == other.getIsReplicated());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ISREPLICATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsReplicated());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static proto.RPC.AppendEntriesRPCResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static proto.RPC.AppendEntriesRPCResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(proto.RPC.AppendEntriesRPCResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code AppendEntriesRPCResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:AppendEntriesRPCResponse)
+        proto.RPC.AppendEntriesRPCResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return proto.RPC.internal_static_AppendEntriesRPCResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return proto.RPC.internal_static_AppendEntriesRPCResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                proto.RPC.AppendEntriesRPCResponse.class, proto.RPC.AppendEntriesRPCResponse.Builder.class);
+      }
+
+      // Construct using proto.RPC.AppendEntriesRPCResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        isReplicated_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return proto.RPC.internal_static_AppendEntriesRPCResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public proto.RPC.AppendEntriesRPCResponse getDefaultInstanceForType() {
+        return proto.RPC.AppendEntriesRPCResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public proto.RPC.AppendEntriesRPCResponse build() {
+        proto.RPC.AppendEntriesRPCResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public proto.RPC.AppendEntriesRPCResponse buildPartial() {
+        proto.RPC.AppendEntriesRPCResponse result = new proto.RPC.AppendEntriesRPCResponse(this);
+        result.isReplicated_ = isReplicated_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof proto.RPC.AppendEntriesRPCResponse) {
+          return mergeFrom((proto.RPC.AppendEntriesRPCResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(proto.RPC.AppendEntriesRPCResponse other) {
+        if (other == proto.RPC.AppendEntriesRPCResponse.getDefaultInstance()) return this;
+        if (other.getIsReplicated() != false) {
+          setIsReplicated(other.getIsReplicated());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        proto.RPC.AppendEntriesRPCResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.RPC.AppendEntriesRPCResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean isReplicated_ ;
+      /**
+       * <code>bool isReplicated = 1;</code>
+       */
+      public boolean getIsReplicated() {
+        return isReplicated_;
+      }
+      /**
+       * <code>bool isReplicated = 1;</code>
+       */
+      public Builder setIsReplicated(boolean value) {
+        
+        isReplicated_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isReplicated = 1;</code>
+       */
+      public Builder clearIsReplicated() {
+        
+        isReplicated_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:AppendEntriesRPCResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:AppendEntriesRPCResponse)
+    private static final proto.RPC.AppendEntriesRPCResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new proto.RPC.AppendEntriesRPCResponse();
+    }
+
+    public static proto.RPC.AppendEntriesRPCResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AppendEntriesRPCResponse>
+        PARSER = new com.google.protobuf.AbstractParser<AppendEntriesRPCResponse>() {
+      @java.lang.Override
+      public AppendEntriesRPCResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AppendEntriesRPCResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AppendEntriesRPCResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AppendEntriesRPCResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public proto.RPC.AppendEntriesRPCResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LogEntryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:LogEntry)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes command = 1;</code>
+     */
+    com.google.protobuf.ByteString getCommand();
+
+    /**
+     * <code>int32 term = 2;</code>
+     */
+    int getTerm();
+  }
+  /**
+   * Protobuf type {@code LogEntry}
+   */
+  public  static final class LogEntry extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:LogEntry)
+      LogEntryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LogEntry.newBuilder() to construct.
+    private LogEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LogEntry() {
+      command_ = com.google.protobuf.ByteString.EMPTY;
+      term_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LogEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              command_ = input.readBytes();
+              break;
+            }
+            case 16: {
+
+              term_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return proto.RPC.internal_static_LogEntry_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return proto.RPC.internal_static_LogEntry_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              proto.RPC.LogEntry.class, proto.RPC.LogEntry.Builder.class);
+    }
+
+    public static final int COMMAND_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString command_;
+    /**
+     * <code>bytes command = 1;</code>
+     */
+    public com.google.protobuf.ByteString getCommand() {
+      return command_;
+    }
+
+    public static final int TERM_FIELD_NUMBER = 2;
+    private int term_;
+    /**
+     * <code>int32 term = 2;</code>
+     */
+    public int getTerm() {
+      return term_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!command_.isEmpty()) {
+        output.writeBytes(1, command_);
+      }
+      if (term_ != 0) {
+        output.writeInt32(2, term_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!command_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, command_);
+      }
+      if (term_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, term_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof proto.RPC.LogEntry)) {
+        return super.equals(obj);
+      }
+      proto.RPC.LogEntry other = (proto.RPC.LogEntry) obj;
+
+      boolean result = true;
+      result = result && getCommand()
+          .equals(other.getCommand());
+      result = result && (getTerm()
+          == other.getTerm());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + COMMAND_FIELD_NUMBER;
+      hash = (53 * hash) + getCommand().hashCode();
+      hash = (37 * hash) + TERM_FIELD_NUMBER;
+      hash = (53 * hash) + getTerm();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static proto.RPC.LogEntry parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.RPC.LogEntry parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.RPC.LogEntry parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.RPC.LogEntry parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.RPC.LogEntry parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.RPC.LogEntry parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.RPC.LogEntry parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static proto.RPC.LogEntry parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static proto.RPC.LogEntry parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static proto.RPC.LogEntry parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static proto.RPC.LogEntry parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static proto.RPC.LogEntry parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(proto.RPC.LogEntry prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code LogEntry}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:LogEntry)
+        proto.RPC.LogEntryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return proto.RPC.internal_static_LogEntry_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return proto.RPC.internal_static_LogEntry_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                proto.RPC.LogEntry.class, proto.RPC.LogEntry.Builder.class);
+      }
+
+      // Construct using proto.RPC.LogEntry.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        command_ = com.google.protobuf.ByteString.EMPTY;
+
+        term_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return proto.RPC.internal_static_LogEntry_descriptor;
+      }
+
+      @java.lang.Override
+      public proto.RPC.LogEntry getDefaultInstanceForType() {
+        return proto.RPC.LogEntry.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public proto.RPC.LogEntry build() {
+        proto.RPC.LogEntry result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public proto.RPC.LogEntry buildPartial() {
+        proto.RPC.LogEntry result = new proto.RPC.LogEntry(this);
+        result.command_ = command_;
+        result.term_ = term_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof proto.RPC.LogEntry) {
+          return mergeFrom((proto.RPC.LogEntry)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(proto.RPC.LogEntry other) {
+        if (other == proto.RPC.LogEntry.getDefaultInstance()) return this;
+        if (other.getCommand() != com.google.protobuf.ByteString.EMPTY) {
+          setCommand(other.getCommand());
+        }
+        if (other.getTerm() != 0) {
+          setTerm(other.getTerm());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        proto.RPC.LogEntry parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.RPC.LogEntry) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString command_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes command = 1;</code>
+       */
+      public com.google.protobuf.ByteString getCommand() {
+        return command_;
+      }
+      /**
+       * <code>bytes command = 1;</code>
+       */
+      public Builder setCommand(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        command_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes command = 1;</code>
+       */
+      public Builder clearCommand() {
+        
+        command_ = getDefaultInstance().getCommand();
+        onChanged();
+        return this;
+      }
+
+      private int term_ ;
+      /**
+       * <code>int32 term = 2;</code>
+       */
+      public int getTerm() {
+        return term_;
+      }
+      /**
+       * <code>int32 term = 2;</code>
+       */
+      public Builder setTerm(int value) {
+        
+        term_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 term = 2;</code>
+       */
+      public Builder clearTerm() {
+        
+        term_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:LogEntry)
+    }
+
+    // @@protoc_insertion_point(class_scope:LogEntry)
+    private static final proto.RPC.LogEntry DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new proto.RPC.LogEntry();
+    }
+
+    public static proto.RPC.LogEntry getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LogEntry>
+        PARSER = new com.google.protobuf.AbstractParser<LogEntry>() {
+      @java.lang.Override
+      public LogEntry parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LogEntry(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LogEntry> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LogEntry> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public proto.RPC.LogEntry getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_VoteRPCRequest_descriptor;
   private static final 
@@ -2084,6 +4203,21 @@ public final class RPC {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_VoidRPCResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AppendEntriesRPCRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AppendEntriesRPCRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AppendEntriesRPCResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AppendEntriesRPCResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_LogEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_LogEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2097,12 +4231,21 @@ public final class RPC {
       "\001(\005\022\023\n\013candidateId\030\002 \001(\005\"4\n\017VoteRPCRespo" +
       "nse\022\014\n\004term\030\001 \001(\005\022\023\n\013voteGranted\030\002 \001(\010\"5" +
       "\n\023HeartbeatRPCRequest\022\020\n\010senderId\030\001 \001(\005\022" +
-      "\014\n\004term\030\002 \001(\005\"\021\n\017VoidRPCResponse2R\n\022Requ" +
-      "estVoteService\022<\n\025requestVoteRPCHandler\022" +
-      "\017.VoteRPCRequest\032\020.VoteRPCResponse\"\0002O\n\017" +
-      "HeatbeatService\022<\n\020sendHeartbeatRPC\022\024.He" +
-      "artbeatRPCRequest\032\020.VoidRPCResponse\"\000B\007\n" +
-      "\005protob\006proto3"
+      "\014\n\004term\030\002 \001(\005\"\021\n\017VoidRPCResponse\"\236\001\n\027App" +
+      "endEntriesRPCRequest\022\020\n\010leaderID\030\001 \001(\005\022\024" +
+      "\n\014prevLogIndex\030\002 \001(\005\022\023\n\013prevLogTerm\030\003 \001(" +
+      "\005\022\035\n\nlogEntries\030\004 \003(\0132\t.LogEntry\022\031\n\021lead" +
+      "erCommitIndex\030\005 \001(\005\022\014\n\004term\030\006 \001(\005\"0\n\030App" +
+      "endEntriesRPCResponse\022\024\n\014isReplicated\030\001 " +
+      "\001(\010\")\n\010LogEntry\022\017\n\007command\030\001 \001(\014\022\014\n\004term" +
+      "\030\002 \001(\0052R\n\022RequestVoteService\022<\n\025requestV" +
+      "oteRPCHandler\022\017.VoteRPCRequest\032\020.VoteRPC" +
+      "Response\"\0002O\n\017HeatbeatService\022<\n\020sendHea" +
+      "rtbeatRPC\022\024.HeartbeatRPCRequest\032\020.VoidRP" +
+      "CResponse\"\0002i\n\025LogReplicationService\022P\n\027" +
+      "appendEntriesRPCHandler\022\030.AppendEntriesR" +
+      "PCRequest\032\031.AppendEntriesRPCResponse\"\000B\007" +
+      "\n\005protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2140,6 +4283,24 @@ public final class RPC {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VoidRPCResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_AppendEntriesRPCRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_AppendEntriesRPCRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AppendEntriesRPCRequest_descriptor,
+        new java.lang.String[] { "LeaderID", "PrevLogIndex", "PrevLogTerm", "LogEntries", "LeaderCommitIndex", "Term", });
+    internal_static_AppendEntriesRPCResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_AppendEntriesRPCResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AppendEntriesRPCResponse_descriptor,
+        new java.lang.String[] { "IsReplicated", });
+    internal_static_LogEntry_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_LogEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_LogEntry_descriptor,
+        new java.lang.String[] { "Command", "Term", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

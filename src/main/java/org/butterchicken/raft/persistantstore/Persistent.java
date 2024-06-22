@@ -9,9 +9,9 @@ public interface Persistent {
 
     void deserialize(byte [] serializedObject) throws IOException;
 
-    void persist() ;
+    void persist() throws IOException;
 
-    void load() throws FileNotFoundException;
+    void load() throws FileNotFoundException, IOException;
 
     String getStorageFileName();
 }
